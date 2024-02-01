@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Nacho ✨</title>
+    <title>✨ Nacho's Portfolio ✨</title>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/76927919?v=4" sizes="16x16">
     <!-- Meta for discord and whatsapp -->
     <meta property="og:image" content="https://i.imgur.com/3yEIGzl.png"> <!--Whatsapp-->
@@ -18,7 +18,7 @@
     <meta property="og:description"
         content="Welcome to my portfolio, this is a temporary portfolio until i can finish the original." />
     <meta property="og:url" content="dex" />
-    <meta name="theme-color" content="#2F3136">
+    <meta name="theme-color" content="#2B2D31">
     <!-- css import -->
     <!-- <link rel="stylesheet" href="index.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -242,13 +242,11 @@
             cursor: pointer;
         }
 
-        /* Estilo de agrandar al acercar el mouse */
         .social:hover {
             transform: scale(1.1);
             transition: transform 0.3s ease;
         }
 
-        /* Estilo de tooltip para el mensaje "Copiado!" */
         .tooltip {
             position: absolute;
             background: #7289DA;
@@ -332,12 +330,11 @@
         function copyToClipboard(text, icon) {
             navigator.clipboard.writeText(text);
 
-            // Muestra el mensaje "Copiado!" arriba del icono
             let tooltip = document.createElement("div");
             tooltip.innerHTML = "Copiado!";
             tooltip.style.position = "absolute";
-            tooltip.style.top = `${icon.offsetTop - 40}px`;  // Ajusta la distancia desde el icono
-            tooltip.style.left = `${icon.offsetLeft + icon.offsetWidth / 2}px`;  // Centra el mensaje sobre el icono
+            tooltip.style.top = `${icon.offsetTop - 40}px`; 
+            tooltip.style.left = `${icon.offsetLeft + icon.offsetWidth / 2}px`; 
             tooltip.style.transform = "translateX(-50%)";
             tooltip.style.background = "#36393f";
             tooltip.style.color = "#fff";
