@@ -1,0 +1,99 @@
+<head>
+    <title>Como se creo esta web ?</title>
+    <link href="https://iosevka-webfonts.github.io/iosevka/iosevka.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/76927919?v=4" />
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/76927919?v=4" />
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/ros-pine-moon.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- Meta for discord and whatsapp -->
+    <meta property="og:site_name" content="Variables."> <!--Whatsapp-->
+    <meta property="og:image" content="https://i.imgur.com/3yEIGzl.png"> <!--Whatsapp-->
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <!--Discord-->
+    <meta property="og:url" content="https://tsuchipls.github.io/">
+    <meta property="og:title" content="✨ Nacho's Portfolio ✨" />
+    <meta property="og:description"
+        content="Welcome to my portfolio, this is a temporary portfolio until i can finish the original." />
+    <meta property="og:url" content="dex" />
+    <meta name="theme-color" content="#2F3136">
+    <!-- css import -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <nav>
+        <br />
+        <a class="laa" href="../blog.html">⬅ Volver</a>
+        |
+        <a class="laa1" href="https://github.com/tsuchipls" target="_blank">🖥️ Github</a>
+        <br />
+        <br />
+    </nav>
+
+</head>
+
+<body>
+    <div class="note">
+        <br>
+        <img width="719" height="427.8" src="https://i.imgur.com/gsABRdK.png">
+        <p>
+            Bueno, para empezar:
+        <h2>¿Que son las variables?</h2> En programación, una variable es un concepto fundamental que se utiliza para
+        almacenar y manipular datos en la memoria de una computadora. Una variable es un espacio con nombre en la
+        memoria donde se puede almacenar información que puede cambiar durante la ejecución de un programa.<br><br>Por
+        ejemplo, si estás escribiendo un programa para calcular la suma de dos números, podrías declarar dos variables
+        llamadas numero1 y numero2 para almacenar los valores que quieres sumar.
+        <h2>¿Como funcionan?</h2> Cuando definis una variable en un programa, estás reservando un espacio en la memoria
+        de la computadora para almacenar un valor específico. Este espacio en la memoria tiene un nombre asociado (el
+        nombre de la variable) que te permite acceder a esta y manipularlo a lo largo del programa. <br><br>Por ejemplo:
+        <pre><code class="language-ts">let numero = 5; 
+// Estas diciendole al programa que reserve un espacio en la memoria llamado "numero" y le asignes el valor 5
+// Durante la ejecución del programa, puedes acceder al valor almacenado en la variable y utilizarlo en cálculos, mostrarlo en la pantalla, o realizar otras operaciones según sea necesario. También puedes modificar el valor almacenado en la variable durante la ejecución del programa, asignándole un nuevo valor cuando sea necesario.
+numero = 6
+console.log(numero)
+// -> 6</code></pre>
+        Ahora existen diversos tipos de variables en Javascript/ts, veamoslos:
+        <pre><code class="language-ts">let key = "value" // Tiene un alcance de bloque, es decir todo el codigo y se puede reasignar valores.
+var key = "value" // Es la forma mas antigua de declarar variables en JavaScript. Tiene un alcance de funcion y puede ser reasignada.
+const key = "value" 
+/* 
+Una variable de solo lectura con un alcance de bloque. Una vez asignado un valor no se puede reasignar.
+El simple hecho de tratar de reasignar valor el propio lenguaje te tira este error "Uncaught TypeError: Assignment to constant variable.".
+-----------------------------------------
+Algo que si se puede hacer es esto:
+*/
+let numero;
+numero = 1
+// Por ejemplo se puede dejar sin valor, pero seria una variable mal implementada ya que nunca se usa.
+</code></pre>
+        Como ya hemos visto, hay variables las cuales si se pueden modificar su valor anteriormente establecido y hay otras que simplemente son imposibles de realizar este acto. <br><br>
+        Para un mejor entendimiento, hice unos pequeños graficos, este detalla como funciona una variable que si se puede cambiar su valor, es decir <b>let</b> o <b>var</b>
+        <img src="https://i.imgur.com/ZHhYctM.png" alt="">
+        En cambio las constantes:
+        <img src="https://i.imgur.com/vSBy46x.png" alt="">
+        Sabiendo esto, ahora podemos aprender los:<h2>Tipos de datos. (datos primitivos)</h2>
+        Los principales tipos de datos se dividen en: <code>boolean, string y number</code>, luego aparecen los <code>undefined, bigint y symbol</code>, pero solamente voy a explicar los primeros tres. <br><br>
+        <pre><code class="language-ts">// En Typecript, se puede definir una variable con un tipo de dato ya definido.
+//  El string es una cadena de texto, siempre se usa dentro de comillas simples' o comillas dobles"
+let nombre:string = "nacho"
+// Tambien se puede reasignar valor.
+nombre = "joaco"
+console.log(nombre) // -> "joaco"
+// Pero no se puede asignar un dato de otro tipo.
+nombre = 1 // -> "Type 'number' is not assignable to type 'string'."
+// Tampoco se puede reasignar un tipo de dato -> "'number' only refers to a type, but is being used as a value here. (por ejemplo)"
+let verdadero:boolean = true // Este es un booleano, y se define como dato logico (true, false)
+verdadero = false</code></pre>
+
+        <h3>Espero que se haya entendido, cualquier duda o error pueden hacer un Issue en <a href="https://github.com/tsuchipls/tsuchipls.github.io/issues">github</a>.</h3>
+        </p>
+
+    </div>
+</body>
+
+</html>

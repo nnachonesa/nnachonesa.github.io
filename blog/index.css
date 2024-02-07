@@ -57,7 +57,6 @@ body {
     line-height: 1.6;
     text-rendering: optimizeLegibility;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-    user-select: none;
 }
 
 .note {
@@ -279,10 +278,6 @@ a {
     position: fixed;
     top: -10%;
     z-index: 9999;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     cursor: default;
     -webkit-animation-name: snowflakes-fall, snowflakes-shake;
     -webkit-animation-duration: 10s, 3s;
@@ -366,4 +361,8 @@ a {
     left: 65%;
     -webkit-animation-delay: 4s, 2.5s;
     animation-delay: 4s, 2.5s
+}
+
+pre {
+    background: #232136;
 }
