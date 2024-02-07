@@ -38,6 +38,11 @@
 </head>
 
 <body>
+    <style>
+        pre {
+            background: #232136;
+        }
+    </style>
     <div class="note">
         <br>
         <img width="719" height="427.8" src="https://i.imgur.com/gsABRdK.png">
@@ -71,13 +76,16 @@ let numero;
 numero = 1
 // Por ejemplo se puede dejar sin valor, pero seria una variable mal implementada ya que nunca se usa.
 </code></pre>
-        Como ya hemos visto, hay variables las cuales si se pueden modificar su valor anteriormente establecido y hay otras que simplemente son imposibles de realizar este acto. <br><br>
-        Para un mejor entendimiento, hice unos pequeños graficos, este detalla como funciona una variable que si se puede cambiar su valor, es decir <b>let</b> o <b>var</b>
+        Como ya hemos visto, hay variables las cuales si se pueden modificar su valor anteriormente establecido y hay
+        otras que simplemente son imposibles de realizar este acto. <br><br>
+        Para un mejor entendimiento, hice unos pequeños graficos, este detalla como funciona una variable que si se
+        puede cambiar su valor, es decir <b>let</b> o <b>var</b>
         <img src="https://i.imgur.com/ZHhYctM.png" alt="">
         En cambio las constantes:
         <img src="https://i.imgur.com/vSBy46x.png" alt="">
         Sabiendo esto, ahora podemos aprender los:<h2>Tipos de datos. (datos primitivos)</h2>
-        Los principales tipos de datos se dividen en: <code>boolean, string y number</code>, luego aparecen los <code>undefined, bigint y symbol</code>, pero solamente voy a explicar los primeros tres. <br><br>
+        Los principales tipos de datos se dividen en: <code>boolean, string y number</code>, luego aparecen los
+        <code>undefined, bigint y symbol</code>, pero solamente voy a explicar los primeros tres. <br><br>
         <pre><code class="language-ts">// En Typecript, se puede definir una variable con un tipo de dato ya definido.
 //  El string es una cadena de texto, siempre se usa dentro de comillas simples' o comillas dobles"
 let nombre:string = "nacho"
@@ -90,7 +98,8 @@ nombre = 1 // -> "Type 'number' is not assignable to type 'string'."
 let verdadero:boolean = true // Este es un booleano, y se define como dato logico (true, false)
 verdadero = false</code></pre>
 
-        <h3>Espero que se haya entendido, cualquier duda o error pueden hacer un Issue en <a href="https://github.com/tsuchipls/tsuchipls.github.io/issues">github</a>.</h3>
+        <h3>Espero que se haya entendido, cualquier duda o error pueden hacer un Issue en <a
+                href="https://github.com/tsuchipls/tsuchipls.github.io/issues">github</a>.</h3>
         </p>
 
     </div>

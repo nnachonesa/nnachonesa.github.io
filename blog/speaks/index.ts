@@ -1,1 +1,0 @@
-let algo:string = "a"
