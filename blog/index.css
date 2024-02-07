@@ -60,6 +60,10 @@ body {
 }
 
 .note {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     max-width: 700px;
     height: auto;
     margin-left: auto;
@@ -107,7 +111,7 @@ body {
     font-family: 'Iosevka Web';
     font-size: 17px;
     line-height: 1.6;
-
+    user-select: none;
     background-color: #000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
