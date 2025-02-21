@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .section {
+    padding: 3rem 1.5rem;
+}
+
+.contentsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+}
+
+.contentimg {
+    max-height: calc(100% - 60%);
+    max-width: calc(100% - 60%);
+    border-radius: 10px;
+    margin: 0 2vw;
+}
+
+.contentsep {
+    margin: 0 2vw;
+    min-width: 350px;
+    max-width: 760px;
+}
+
+.contentsep h1 {
+    color: #4A4A4A;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+body {
+    color: #4a4a4a;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.contentsep h2 {
+    color: #4A4A4A;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+.tarjeta {
+    min-width: 350px;
+    max-width: 760px;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    flex-direction: column;
+    justify-content: center;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--Barra Superior-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light select-none">
+        <nav class="">
+            <!--<a class="navbar-brand" href="/">
+                 <img src="icon.jpg" width="60" height="60" alt="" />
+             </a>-->
+        </nav>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+                <!--Principio barra-->
+
+                <!--Principal-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Principal 🏠<span class="sr-only">(current)</span></a>
+                </li>
+                <!--Lista de maquinas-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nuestros Equipos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">wooting 60he</a>
+                        <a class="dropdown-item" href="#">idk</a>
+                        <a class="dropdown-item" href="#">idk</a>
+                        <a class="dropdown-item" href="#">idk</a>
+                    </div>
+                </li>
+                <!--Otros servicios-->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Otros Servicios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Switches</a>
+                        <a class="dropdown-item disabled" href="">Laburo</a>
+                    </div>
+                </li>
+                <!--Sobre nosotros-->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre Nosotros ℹ️</a>
+                </li>
+                <!--Contactanos-->
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Contactanos 💬</a>
+                </li>
+                <!--Fin barra-->
+            </ul>
+        </div>
+    </nav>
+</head>
+
+<body>
+    <!--animate__zoomIn animate__fadeInUp animate__bounceInUp animate__backInUp-->
+
+    <section class="section animate__animated animate__zoomIn">
+        <!--section animate__animated animate__backInUp-->
+        <!--main-->
+        <div class="contentsection select-none">
+            <div class="contentdiv">
+                <div class="contentsep">
+                    <h1 style="font-size: 5.5rem;">titulo generico</h1>
+                    <h2 style="font-size: 3ch;">logan generico</h2>
+                </div>
+                <img src="https://i.imgur.com/VcOHd91.png" style="max-height: 1000px;" class="contentimg" alt="">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!--Fin main-->
+        <div class="contentsection">
+            <!--sits-->
+            <div class="contentdiv">
+                <div class="contentsep">
+                    <h1>titulo 1<!-- <span class="badge badge-secondary">New</span> --></h1>
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam
+                        placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus
+                        atque unde perferendis magnam. Ratione perspiciatis
+                        illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt
+                        laboriosam.<br><br><a class="btn btn-primary btn-lg" href="#" role="button">Analizar</a></h2>
+
+                </div>
+                <img src="https://i.imgur.com/McoTzRa.png" style="max-height: 450px;" class="contentimg" alt="">
+            </div>
+
+            <!--en13-->
+            <div class="contentdiv">
+                <img src="https://i.imgur.com/aK1Qcuh.png" style="max-height: 450px;" class="contentimg" alt="">
+                <div class="contentsep">
+                    <h1>titulo 2</h1>
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam
+                        placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus
+                        atque unde perferendis magnam. Ratione perspiciatis
+                        illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt
+                        laboriosam.<br><br><a class="btn btn-primary btn-lg" href="#" role="button">Analizar</a></h2>
+                </div>
+            </div>
+            <!--himfu-->
+            <div class="contentdiv">
+                <div class="contentsep">
+                    <h1>titulo 3</h1>
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam
+                        placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus
+                        atque unde perferendis magnam. Ratione perspiciatis
+                        illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt
+                        laboriosam.<br><br><a class="btn btn-primary btn-lg" href="#" role="button">Analizar</a></h2>
+                </div>
+                <img src="https://i.imgur.com/VcOHd91.pngp" style="max-height: 450px;" class="contentimg" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
