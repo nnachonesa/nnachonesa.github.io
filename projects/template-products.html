@@ -1,202 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <style>
-        .section {
-    padding: 3rem 1.5rem;
-}
-
-.contentsection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.contentdiv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5% 0;
-}
-
-.contentimg {
-    max-height: calc(100% - 60%);
-    max-width: calc(100% - 60%);
-    border-radius: 10px;
-    margin: 0 2vw;
-}
-
-.contentsep {
-    margin: 0 2vw;
-    min-width: 350px;
-    max-width: 760px;
-}
-
-.contentsep h1 {
-    color: #4A4A4A;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-body {
-    color: #4a4a4a;
-    font-size: 1em;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.contentsep h2 {
-    color: #4A4A4A;
-    font-size: 1.6rem;
-    font-weight: 400;
-}
-.tarjeta {
-    min-width: 350px;
-    max-width: 760px;
-    display: flex;
-    align-items: center;
-    margin-left: 10%;
-    flex-direction: column;
-    justify-content: center;
-}
-    </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="img/icon.png" />
     <title>Página Principal</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!--Barra Superior-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light select-none">
-        <nav class="">
-            <!--<a class="navbar-brand" href="/">
-                 <img src="icon.jpg" width="60" height="60" alt="" />
-             </a>-->
-        </nav>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav m-auto">
-                <!--Principio barra-->
-
-                <!--Principal-->
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Principal 🏠<span class="sr-only">(current)</span></a>
-                </li>
-                <!--Lista de maquinas-->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Nuestros Equipos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">wooting 60he</a>
-                        <a class="dropdown-item" href="#">idk</a>
-                        <a class="dropdown-item" href="#">idk</a>
-                        <a class="dropdown-item" href="#">idk</a>
-                    </div>
-                </li>
-                <!--Otros servicios-->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Otros Servicios
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Switches</a>
-                        <a class="dropdown-item disabled" href="">Laburo</a>
-                    </div>
-                </li>
-                <!--Sobre nosotros-->
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre Nosotros ℹ️</a>
-                </li>
-                <!--Contactanos-->
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Contactanos 💬</a>
-                </li>
-                <!--Fin barra-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body class="text-gray-700 text-base font-normal leading-relaxed">
+    <nav class="bg-gray-100 w-full">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <img src="img/icon.png" alt="Logo" class="h-10 w-10" />
+          </div>
+          <div class="hidden md:block">
+            <ul class="flex space-x-6">
+              <li>
+                <a href="/" class="hover:text-blue-600">Principal 🏠</a>
+              </li>
+              <li class="relative group">
+                <a href="#" class="hover:text-blue-600">Nuestros Equipos</a>
+                <div
+                  class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">wooting 60he</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">idk</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">idk</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">idk</a>
+                </div>
+              </li>
+              <li class="relative group">
+                <a href="#" class="hover:text-blue-600">Otros Servicios</a>
+                <div
+                  class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100">Switches</a>
+                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 opacity-50 cursor-not-allowed">Laburo</a>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="hover:text-blue-600">Sobre Nosotros ℹ️</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-blue-600">Contactanos 💬</a>
+              </li>
             </ul>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden">
+        <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <li>
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200">Principal 🏠</a>
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200">Nuestros Equipos</a>
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200">Otros Servicios</a>
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200">Sobre Nosotros ℹ️</a>
+          </li>
+          <li>
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200">Contactanos 💬</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</head>
 
-<body>
-    <!--animate__zoomIn animate__fadeInUp animate__bounceInUp animate__backInUp-->
-
-    <section class="section animate__animated animate__zoomIn">
-        <!--section animate__animated animate__backInUp-->
-        <!--main-->
-        <div class="contentsection select-none">
-            <div class="contentdiv">
-                <div class="contentsep">
-                    <h1 style="font-size: 5.5rem;">titulo generico</h1>
-                    <h2 style="font-size: 3ch;">logan generico</h2>
-                </div>
-                <img src="https://i.imgur.com/VcOHd91.png" style="max-height: 1000px;" class="contentimg" alt="">
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
+    <section class="py-12 px-6 animate__animated animate__zoomIn">
+      <div class="flex flex-col items-center select-none">
+        <div class="mb-8 text-center">
+          <h1 class="text-5xl font-bold">titulo generico</h1>
+          <h2 class="text-2xl text-gray-600 mt-4">logan generico</h2>
         </div>
-        <!--Fin main-->
-        <div class="contentsection">
-            <!--sits-->
-            <div class="contentdiv">
-                <div class="contentsep">
-                    <h1>titulo 1<!-- <span class="badge badge-secondary">New</span> --></h1>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam
-                        placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus
-                        atque unde perferendis magnam. Ratione perspiciatis
-                        illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt
-                        laboriosam.<br><br><a class="btn btn-primary btn-lg" href="#" role="button">Analizar</a></h2>
-
-                </div>
-                <img src="https://i.imgur.com/McoTzRa.png" style="max-height: 450px;" class="contentimg" alt="">
-            </div>
-
-            <!--en13-->
-            <div class="contentdiv">
-                <img src="https://i.imgur.com/aK1Qcuh.png" style="max-height: 450px;" class="contentimg" alt="">
-                <div class="contentsep">
-                    <h1>titulo 2</h1>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam
-                        placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus
-                        atque unde perferendis magnam. Ratione perspiciatis
-                        illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt
-                        laboriosam.<br><br><a class="btn btn-primary btn-lg" href="#" role="button">Analizar</a></h2>
-                </div>
-            </div>
-            <!--himfu-->
-            <div class="contentdiv">
-                <div class="contentsep">
-                    <h1>titulo 3</h1>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam
-                        placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus
-                        atque unde perferendis magnam. Ratione perspiciatis
-                        illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt
-                        laboriosam.<br><br><a class="btn btn-primary btn-lg" href="#" role="button">Analizar</a></h2>
-                </div>
-                <img src="https://i.imgur.com/VcOHd91.pngp" style="max-height: 450px;" class="contentimg" alt="">
-            </div>
-        </div>
+        <img src="https://i.imgur.com/VcOHd91.png" alt="Imagen principal" class="max-h-[1000px] w-auto rounded-lg" />
+      </div>
     </section>
-</body>
 
+    <section class="py-12 px-6">
+      <div class="flex flex-col space-y-12">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div class="min-w-[350px] max-w-[760px] text-center md:text-left">
+            <h1 class="text-3xl font-bold">titulo 1</h1>
+            <h2 class="text-lg mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus atque unde perferendis magnam. Ratione perspiciatis illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt laboriosam.
+              <br /><br />
+              <a href="#"
+                class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg text-lg hover:bg-blue-700 transition-colors">
+                Analizar
+              </a>
+            </h2>
+          </div>
+          <img src="https://i.imgur.com/McoTzRa.png" alt="Imagen 1" class="max-h-96 rounded-lg" />
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <img src="https://i.imgur.com/aK1Qcuh.png" alt="Imagen 2" class="max-h-96 rounded-lg order-2 md:order-1" />
+          <div class="min-w-[350px] max-w-[760px] text-center md:text-left order-1 md:order-2">
+            <h1 class="text-3xl font-bold">titulo 2</h1>
+            <h2 class="text-lg mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus atque unde perferendis magnam. Ratione perspiciatis illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt laboriosam.
+              <br /><br />
+              <a href="#"
+                class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg text-lg hover:bg-blue-700 transition-colors">
+                Analizar
+              </a>
+            </h2>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div class="min-w-[350px] max-w-[760px] text-center md:text-left">
+            <h1 class="text-3xl font-bold">titulo 3</h1>
+            <h2 class="text-lg mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos iusto fugit ea iste cum numquam placeat quis tempore officia expedita amet, enim modi eveniet dicta a natus magni repellendus atque unde perferendis magnam. Ratione perspiciatis illo deserunt placeat nam ad mollitia, error saepe hic nostrum atque iure sequi incidunt laboriosam.
+              <br /><br />
+              <a href="#"
+                class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg text-lg hover:bg-blue-700 transition-colors">
+                Analizar
+              </a>
+            </h2>
+          </div>
+          <img src="https://i.imgur.com/VcOHd91.png" alt="Imagen 3" class="max-h-96 rounded-lg" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
