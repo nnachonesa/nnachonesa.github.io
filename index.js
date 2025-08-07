@@ -49,12 +49,6 @@ const fallbackRepos = [
         html_url: "https://github.com/nnachonesa/snowflake"
     },
     {
-        name: "neodtom",
-        description: "Mi primero proyecto de rust, un neofetch pero con la bandera de Dont Tread On Me.",
-        tags: ["rust"],
-        html_url: "https://github.com/nnachonesa/neodtom"
-    },
-    {
         name: "Murasaki",
         description: "Un bot de whatsapp simple que envia memes sacados de reddit",
         tags: ["typescript", "whatsapp", "bot"],
@@ -83,12 +77,6 @@ const fallbackRepos = [
         description: "Un bot de discord que usa gpt (davinci) para responder",
         tags: ["javascript", "ai", "discord", "bot"],
         html_url: "https://github.com/nnachonesa/niko-openai"
-    },
-    {
-        name: "NUBProject",
-        description: "Mi primer proyecto de c presentado para el colegio para intentar quedar como lider en un proyecto de programacion, esta aplicacion simula un banco virtual con una pequeña base de datos",
-        tags: ["c"],
-        html_url: "https://github.com/nnachonesa/NUBProject"
     }
 ];
 
@@ -105,17 +93,17 @@ dark:bg-neutral-800/60 dark:text-neutral-300">${tag}</span>
         : "";
 
     return `
-<div class="bg-white shadow rounded-lg overflow-hidden">
+<div class="bg-white dark:bg-gray-800 shadow rounded-lg overflow-hidden transition-colors duration-300">
   <div class="px-4 py-5 sm:p-6">
-    <h2 class="text-lg leading-6 font-medium text-gray-900">${repo.name}</h2>
-    <p class="mt-1 text-sm text-gray-600">${repo.description}</p>
+    <h2 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">${repo.name}</h2>
+    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">${repo.description}</p>
     <ul class="mt-4 flex flex-wrap gap-2">
       ${tagSpans}
     </ul>
   </div>
   <div class="px-4 py-4 sm:px-6 flex justify-between">
-    <a target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-indigo-600 hover:text-indigo-500" aria-label="GitHub Repository" href="${repo.html_url}">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <a target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300" aria-label="GitHub Repository" href="${repo.html_url}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-900 dark:text-white">
         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
         <path d="M9 18c-4.51 2-5-2-7-2"></path>
       </svg>
@@ -173,3 +161,25 @@ if (cachedRepos) {
 }
 
 fetchAndCacheRepos();
+const toggleBtn = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  // coso oscuro y claro
+
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    html.classList.add("dark");
+    toggleBtn.textContent = "☀️";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    html.classList.toggle("dark");
+
+    if (html.classList.contains("dark")) {
+      toggleBtn.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggleBtn.textContent = "🌙";
+      localStorage.setItem("theme", "light");
+    }
+  });
