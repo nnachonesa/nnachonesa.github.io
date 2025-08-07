@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
     <meta charset="UTF-8" />
@@ -33,157 +33,106 @@
     <meta name="theme-color" content="#000000">
     <!-- alter -->
     <link rel="alternate" hreflang="en" href="https://nnachonesa.github.io/">
+
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+    </script>
+    <link rel="stylesheet" href="index.css">
+</head>
 
-<body class="bg-black text-white">
-    <section class="bg-white text-black flex items-center justify-center min-h-screen w-full p-4">
-        <div class="w-full max-w-md text-center">
-            <h2 class="text-2xl font-mono mb-4">yo, simplemente yo, nacho.</h2>
-            <p class="text-base font-mono mb-4">~El tiempo paso y paso y la gata blanca se debilitó y murió, el gato
-                atigrado lloro un millon de veces, y despues murió. Excepto que esta vez, no volvió a la vida.~</p>
+<body class="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300">
+    <!-- Botón de cambio de tema -->
+    <div class="absolute top-4 right-4 z-50">
+        <button id="theme-toggle"
+            class="text-2xl p-2 rounded-full hover:scale-105 transition-transform">
+            🌙
+        </button>
+    </div>
+
+    <!-- PRESENTACIÓN -->
+    <section class="flex flex-col md:flex-row items-center justify-center min-h-screen w-full p-6">
+        <div class="w-full max-w-sm mb-6 md:mb-0 md:mr-8">
+            <img src="https://avatars.githubusercontent.com/u/76927919?v=4" alt="Foto de perfil"
+                class="rounded-xl shadow-lg" />
+        </div>
+        <div class="max-w-2xl">
+            <h1 class="text-3xl font-bold mb-4">yo, simplemente yo, nacho.</h1>
+            <p class="text-base mb-4 font-mono">
+                Hola, soy nacho y actualmente estudio en una escuela técnica. Estoy dentro de la especialidad de
+                electrónica, pero mi verdadera pasión y es la programación y son autodidactas.
+            </p>
+            <p class="text-base mb-4 font-mono">
+                Soy un programador autodidacta enfocado en backend. Me encanta crear aplicaciones, resolver problemas y
+                aprender nuevas tecnologías. Mi lenguaje casi favorito y de preferencia es Typescript, aunque siempre estoy
+                aprendiendo cosas nuevas. (acutalmente Rust)
+            </p>
+            <p class="text-base mb-4 font-mono">
+                Este Portafolio es una forma de compartir mis proyectos, cosas que me interesen y habilidades, intentando crear conexiones y
+                seguir creciendo en el mundo de la programación.
+            </p>
         </div>
     </section>
-
-    <section class="bg-black text-white flex items-center justify-center min-h-screen w-full p-4">
-        <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl">
-            <article class="w-full max-w-xl text-center">
-                <h1 class="text-3xl font-bold border-b-2 border-white mb-4">
-                    Acerca de mi
-                </h1>
-                <p class="mb-4" style="font-family: 'Fira Code', monospace;">
-                    Hola, soy nacho y actualmente estudio en una escuela técnica.
-                    Estoy dentro de la especialidad de electrónica, pero mi verdadera
-                    pasión y conocimiento en programación son autodidactas.
-                </p>
-                <p class="mb-4" style="font-family: 'Fira Code', monospace;">
-                    Soy un programador autodidacta enfocado en backend. Me encanta crear
-                    aplicaciones, resolver problemas y aprender nuevas tecnologías. Mi
-                    lenguaje favorito y de preferencia es Typescript, aunque siempre estoy
-                    aprendiendo cosas nuevas.
-                </p>
-                <p class="mb-4" style="font-family: 'Fira Code', monospace;">
-                    Este Portafolio es una forma de compartir mis proyectos y habilidades,
-                    buscando crear conexiones y seguir creciendo en el mundo de la
-                    programación.
-                </p>
-            </article>
-        </div>
-    </section>
-
-    <!--     <section class="bg-white text-black flex items-center justify-center min-h-[50vh] w-full p-4">
-        <h2 class="text-2xl font-bold">como</h2>
-    </section> -->
 
     <!-- Proyectos -->
-    <section class="bg-gray-200 text-black flex items-center justify-center min-h-[50vh] w-full p-4">
+    <section class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white flex items-center justify-center min-h-[50vh] w-full p-4">
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-5" id="project-grid">
         </div>
     </section>
     <p id="status" class="text-gray-600 text-sm mt-4"></p>
 
-    <!-- habilidades -->
+    <!-- Habilidades -->
+    <section class="py-12 px-4 bg-gray-200 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500">
+        <h2 class="text-4xl font-bold text-center mb-12 drop-shadow">Habilidades</h2>
+      
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <!-- HABILIDAD -->    
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="typescript" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">TypeScript</span>
+          </div>
+      
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/rust/rust-original.svg" alt="Tailwind" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">Rust</span>
+          </div>
+      
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">Git</span>
+          </div>
+      
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/bun/bun-original.svg" alt="bun" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">Bun</span>
+          </div>
+
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/neovim/neovim-original.svg" alt="neovim" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">Neovim</span>
+          </div>
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/nodejs/nodejs-plain-wordmark.svg" alt="NodeJS" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">NodeJS</span>
+          </div>
+
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">MongoDB</span>
+          </div>
+        </div>
+      </section>
+      
+
+    <!-- Footer -->
     <section
-        class="bg-gray-200 min-h-screen py-10 px-4 flex flex-col items-center justify-center from-blue-50 to-pink-50">
-        <!-- HABILIDADES PERSONALES -->
-        <div class="max-w-5xl w-full p-6 bg-white rounded-lg shadow-md bg-gray-200 ">
-            <h2 class="text-2xl font-bold text-gray-700 mb-4">Habilidades Personales</h2>
-            <p class="text-gray-600 mb-6">
-                Habilidades adicionales que enriquecen y complementan mi perfil técnico,
-                permitiéndome abordar proyectos de manera integral, adaptarme a diferentes desafíos
-                y aportar soluciones más completas y efectivas.
-            </p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                <span style="text-align: center;"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium hover:scale-105 transition-transform cursor-default">
-                    Trabajo en equipo
-                </span>
-                <span style="text-align: center;"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium hover:scale-105 transition-transform cursor-default">
-                    Comunicación efectiva
-                </span>
-                <span style="text-align: center;"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium hover:scale-105 transition-transform cursor-default">
-                    Resolución de conflictos
-                </span>
-                <span style="text-align: center;"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-pink-100 text-pink-800 text-sm font-medium hover:scale-105 transition-transform cursor-default">
-                    Adaptabilidad
-                </span>
-                <span style="text-align: center;"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium hover:scale-105 transition-transform cursor-default">
-                    Aprendizaje constante
-                </span>
-            </div>
-        </div>
-
-        <!-- HABILIDADES TÉCNICAS -->
-        <div class="max-w-5xl w-full p-6 mt-8 bg-white rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold text-gray-700 mb-4">Habilidades Técnicas</h2>
-            <p class="text-gray-600 mb-6">
-                Estas son algunas de las tecnologías y herramientas que utilizo para desarrollar proyectos.
-            </p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 text-sm font-medium hover:scale-105 transition-transform">
-                    JavaScript
-                </a>
-                <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium hover:scale-105 transition-transform">
-                    TypeScript
-                </a>
-                <a href="https://www.rust-lang.org/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-orange-100 text-orange-800 text-sm font-medium hover:scale-105 transition-transform">
-                    Rust
-                </a>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-red-100 text-red-800 text-sm font-medium hover:scale-105 transition-transform">
-                    HTML
-                </a>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium hover:scale-105 transition-transform">
-                    CSS
-                </a>
-                <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-teal-100 text-teal-800 text-sm font-medium hover:scale-105 transition-transform">
-                    TailwindCSS
-                </a>
-                <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium hover:scale-105 transition-transform">
-                    MongoDB
-                </a>
-                <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium hover:scale-105 transition-transform">
-                    Node.js
-                </a>
-                <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium hover:scale-105 transition-transform">
-                    Express
-                </a>
-                <a href="https://www.electronjs.org/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium hover:scale-105 transition-transform">
-                    Electron
-                </a>
-                <a href="https://bun.sh/" target="_blank" rel="noopener noreferrer"
-                    class="flex items-center justify-center px-4 py-2 rounded-full bg-pink-100 text-pink-800 text-sm font-medium hover:scale-105 transition-transform">
-                    Bun
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="bg-gray-200 text-black flex items-center justify-center  w-full p-4">
+        class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white flex items-center justify-center w-full p-4">
         <h2>@nnachonesa ~ 11.04.2025</h2>
     </section>
-    <script src="index.js"></script>
 
-    <!-- <section class="bg-gray-900 flex items-center justify-center min-h-[50vh] w-full p-4">
-        <p class="text-white text-lg">Contacto</p>
-    </section> -->
+    <script src="index.js"></script>
 </body>
 
 </html>
