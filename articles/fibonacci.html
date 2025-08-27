@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fibonacci</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 15px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #ffffff;
+      color: #000000;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #e4e4e4;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 15px auto;
+    }
+
+    pre, code {
+      display: block;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    body.dark pre, body.dark code {
+      background: #2a2a2a;
+      color: #f5f5f5;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* 📱 Ajustes para pantallas pequeñas */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+        font-size: 16px;
+      }
+      pre, code {
+        font-size: 13px;
+      }
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle">🌙</button>
+
+  <h1>Fibonacci</h1>
+  <h2>
+    Nombrada en honor a Leonardo de Pisa, conocido como Fibonacci, esta secuencia numérica desempeña un papel significativo en diversos campos, desde las ciencias hasta las artes. 
+  </h2>
+  <p>
+    La Serie Fibonacci se define como una secuencia de números en la que cada número después de los dos primeros es la suma de los dos números anteriores. <br>Los dos primeros números en la serie son 0 y 1, por lo que la secuencia comienza como sigue: 0, 1, 1, 2, 3, 5, 8, 13, 21, y así sucesivamente. <br>El algoritmo para generar la serie puede implementarse mediante un enfoque iterativo o recursivo, aunque la iteración suele ser más eficiente en términos de tiempo y espacio computacional. <br>En las ciencias, se encuentra en la naturaleza en patrones de crecimiento de plantas, disposición de hojas en tallos y en la disposición de pétalos de flores. En las artes, la Serie Fibonacci y la proporción áurea derivada de ella se han utilizado en la composición de pinturas, fotografías y arquitectura, a menudo para lograr un equilibrio estético.
+  </p>
+
+  <h3 id="ejemplo">Ejemplo</h3>
+  <pre><code>1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597
+2584
+4181
+6765</code></pre>
+
+  <h3>Código de ejemplo en Rust</h3>
+  <pre><code class="language-rust">fn fib (n: i32) -> i32 {
+    if n <= 0 {
+          return 0;
+    } else if n== 1{
+          return 1;
+} else {
+    return fib (n-1)  + fib(n-2);
+ }
+}</code></pre>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+</body>
+</html>

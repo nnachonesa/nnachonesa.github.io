@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algoritmo de Luhn</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 15px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #ffffff;
+      color: #000000;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #e4e4e4;
+    }
+
+    h1,
+    h2,
+    h3 {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 15px auto;
+    }
+
+    pre,
+    code {
+      display: block;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    body.dark pre,
+    body.dark code {
+      background: #2a2a2a;
+      color: #f5f5f5;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* 📱 Ajustes para pantallas pequeñas */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      pre,
+      code {
+        font-size: 13px;
+      }
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <button id="theme-toggle">🌙</button>
+
+  <h1>Algoritmo de Luhn</h1>
+  <h2>
+    Nombrada en honor a Leonardo de Pisa, conocido como Fibonacci, esta secuencia numérica desempeña un papel
+    significativo en diversos campos, desde las ciencias hasta las artes.
+  </h2>
+  <p>
+    El algoritmo de Luhn, también conocido como la fórmula de Luhn, es un método de suma de verificación utilizado
+    ampliamente para validar una variedad de números de identificación, como números de tarjetas de crédito y números de
+    identificación nacionales. En este artículo, exploraremos la historia del algoritmo de Luhn, cómo se implementa, los
+    pasos para calcular el dígito verificador y su uso actual en la verificación de tarjetas de crédito. <br><br>El
+    algoritmo de Luhn fue inventado por el científico alemán Hans Peter Luhn en 1954, mientras trabajaba en IBM. Luhn
+    quería diseñar un algoritmo simple y eficaz para proteger los números de identificación contra errores tipográficos.
+    Su algoritmo es ampliamente utilizado en la actualidad para validar números de tarjetas de crédito, así como en
+    otros sistemas de identificación. <br><br>Algoritmo:
+    <br>
+    - Comenzando por el penúltimo dígito (el dígito a la izquierda del dígito verificador) y avanzando hacia la
+    izquierda, duplicar cada segundo dígito.
+    <br>
+    - Si el resultado de duplicar un dígito es un número de dos dígitos, sumarlos para obtener un solo dígito (por
+    ejemplo, si el resultado es 14, sumar como 1 + 4 = 5; o restarle 9).
+    <br>
+    - Sumar todos los dígitos no duplicados y los dígitos duplicados ajustados.
+    <br>
+    - Calcular el módulo 10 de la suma total; y restar 10 menos este número (y cambiando por 0 si es 0 el módulo 10 de
+    la suma). Este es el dígito verificador. <br><br>Aplicaciones:
+    <br>
+    Actualmente se utiliza en las tarjetas de crédito de 16 dígitos para generar el dígito verificador, y asegurar que
+    la captura fue correcta; previniendo errores al hacer transferencias electrónicas o cargos.
+  </p>
+
+  <h3>Código de ejemplo en Rust</h3>
+  <pre><code class="language-rust">pub fn is_valid_luhn(number_str: &str) -> bool {
+    let digits: Vec<u32> = number_str
+        .chars()
+        .filter(|c| c.is_ascii_digit())
+        .filter_map(|c| c.to_digit(10))
+        .collect();
+
+    if digits.len() < 2 {
+        return false;
+    }
+
+    let mut sum = 0;
+    let mut double_digit = false;
+
+    for digit in digits.iter().rev() {
+        let mut current_digit = *digit;
+
+        if double_digit {
+            current_digit *= 2;
+            if current_digit > 9 {
+                current_digit -= 9; // (e.j., 14 -> 1+4 = 5)
+            }
+        }
+        sum += current_digit;
+        double_digit = !double_digit;
+    }
+
+    sum % 10 == 0
+}</code></pre>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+</body>
+
+</html>

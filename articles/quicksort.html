@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Sort</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 15px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #ffffff;
+      color: #000000;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #e4e4e4;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 15px auto;
+    }
+
+    pre, code {
+      display: block;
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 12px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    body.dark pre, body.dark code {
+      background: #2a2a2a;
+      color: #f5f5f5;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* 📱 Ajustes para pantallas pequeñas */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+        font-size: 16px;
+      }
+      pre, code {
+        font-size: 13px;
+      }
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle">🌙</button>
+
+  <h1 id="quick-sort">Quick Sort</h1>
+  <h2>
+    El ordenamiento rápido (quicksort en inglés) es un algoritmo de ordenacion creado por el científico británico en computación C. A. R. Hoare.
+  </h2>
+  <p>
+    Quick Sort es un algoritmo de ordenamiento eficiente que utiliza una estrategia de dividir y conquistar para ordenar una lista de elementos. Es un algoritmo ampliamente utilizado debido a su eficiencia y versatilidad para ordenar diferentes tipos de datos. <br>- Elige un elemento de la lista, al que llamaremos pivote (por ejemplo, el primer elemento). <br>- Reorganiza la lista de manera que todos los elementos menores al pivote se coloquen a su izquierda, y los mayores a su derecha. A esto se le llama “particionar” la lista. <br>- El pivote está en su posición final y se divide la lista en dos sub-listas alrededor de él. Se tiene una sub-lista con elementos menores al pivote y otra con elementos mayores. <br>- Repite los pasos 1 a 3 para cada sub-lista. Es decir, selecciona un nuevo pivote para cada una de ellas y particiona las sublistas nuevamente. <br>- Continúa hasta que todas las sublistas contengan sólo un elemento, momento en el que la lista entera estará ordenada.
+  </p>
+
+  <h3 id="ejemplo">Ejemplo</h3>
+  <pre><code>7 2 1 6 8 5 3 4
+2 1 3 4 5 6 7 8
+1 2 3 4 5 6 7 8</code></pre>
+
+  <p>Es importante por varias razones:</p>
+  <ul>
+    <li><b>Eficiencia:</b> Es uno de los algoritmos de ordenamiento más eficientes que existen, ya que su complejidad temporal promedio es de O(n log n), lo que significa que es muy rápido en la mayoría de los casos, incluso para grandes conjuntos de datos.</li>
+    <li><b>Adaptabilidad:</b> Es un algoritmo adaptable, lo que significa que puede ser utilizado para ordenar una amplia gama de tipos de datos, incluyendo números, cadenas de texto, objetos personalizados y mucho más.</li>
+    <li><b>Implementación:</b> Es fácil de implementar y puede ser utilizado en una amplia variedad de aplicaciones. Además, es un algoritmo de ordenamiento estable, lo que significa que preserva el orden de elementos iguales en la lista.</li>
+  </ul>
+
+  <img src="https://i.imgur.com/kpPN8Ck.png" alt="Diagrama QuickSort" />
+
+  <h3>Código de ejemplo en Rust</h3>
+  <pre><code class="language-rust">fn main() {
+    let arr: Vec<i8> = vec![19, 7, 15, 12, 16, 18, 4, 11, 13];
+    println!("{:?}", quick(arr));
+}
+
+fn quick(arr: Vec<i8>) -> Vec<i8> {
+    if arr.len() <= 1 {
+        return arr;
+    }
+    let pivot: i8 = arr[0];
+    let left: Vec<i8> = arr[1..].iter().cloned().filter(|&x| x < pivot).collect();
+    let right: Vec<i8> = arr[1..].iter().cloned().filter(|&x| x >= pivot).collect();
+
+    let mut result: Vec<i8> = quick(left);
+    result.push(pivot);
+    result.extend(quick(right));
+    result
+}</code></pre>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+
+      if (body.classList.contains("dark")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  </script>
+</body>
+</html>
