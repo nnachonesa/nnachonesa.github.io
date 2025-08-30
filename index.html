@@ -44,7 +44,6 @@
 </head>
 
 <body class="bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 fade-up">
-    <!-- Botón de cambio de tema -->
     <div class="absolute top-4 right-4 z-50">
         <button id="theme-toggle"
             class="text-2xl p-2 rounded-full hover:scale-105 transition-transform">
@@ -53,7 +52,7 @@
     </div>
 
     <!-- PRESENTACIÓN -->
-    <section class="flex flex-col md:flex-row items-center justify-center min-h-screen w-full p-6">
+    <section id="hero" class="flex flex-col md:flex-row items-center justify-center min-h-screen w-full p-6">
         <div class="w-full max-w-sm mb-6 md:mb-0 md:mr-8">
             <img src="https://avatars.githubusercontent.com/u/76927919?v=4" alt="Foto de perfil"
                 class="rounded-xl shadow-lg" />
@@ -61,29 +60,36 @@
         <div class="max-w-2xl">
             <h1 class="text-3xl font-bold mb-4">yo, simplemente yo, nacho.</h1>
             <p class="text-base mb-4 font-mono">
-                Hola, soy nacho y actualmente estudio en una escuela técnica. Estoy dentro de la especialidad de
-                electrónica, pero mi verdadera pasión es la programación y son autodidactas.
-            </p>
-            <p class="text-base mb-4 font-mono">
-                Soy un programador autodidacta enfocado en backend. Me encanta crear aplicaciones, resolver problemas y
-                aprender nuevas tecnologías. Mi lenguaje casi favorito y de preferencia es Typescript, aunque siempre estoy
-                aprendiendo cosas nuevas. (acutalmente Rust)
-            </p>
-            <p class="text-base mb-4 font-mono">
-                Este Portafolio es una forma de compartir mis proyectos, cosas que me interesen y habilidades, intentando crear conexiones y
-                seguir creciendo en el mundo de la programación.
-            </p>
+              Hola, soy Nacho y actualmente estudio en una escuela técnica con orientación en electrónica. 
+              Sin embargo, mi verdadera pasión es la programación, la cual aprendi de manera autodidacta. 
+          </p>
+          <p class="text-base mb-4 font-mono">
+              Me extiendo en el desarrollo backend: me gusta crear aplicaciones, resolver problemas y explorar nuevas cosas. 
+              Mi lenguaje de preferencia es TypeScript, aunque siempre estoy aprendiendo <a class="underline" href="#skills">tecnologias</a> nuevas (actualmente Rust).
+          </p>
+          <p class="text-base mb-4 font-mono">
+              Este portafolio es mi espacio para compartir <a class="underline" href="#projects">proyectos</a> y <a class="underline" href="#articles">articulos</a>, con el objetivo de generar conexiones 
+              y seguir creciendo en el mundo de la programación.
+          </p>
+          
         </div>
+				<div class="scroll">
+					<a href="#projects">
+						<span class="scroll-btn">
+							<span class="scroll-dot"></span>
+						</span>
+					</a>
+				</div>
     </section>
-
+		
     <!-- Proyectos -->
-    <section class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white flex items-center justify-center min-h-[50vh] w-full p-4">
+    <section id="projects" class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white flex items-center justify-center min-h-[50vh] w-full p-4 max-w-[1920px] mx-auto my-12">
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-5" id="project-grid">
         </div>
         <p id="status" class="text-gray-600 text-sm mt-4"></p>
     </section>
 <!--ARTICULOIS-->
-        <section class="py-12 px-4 bg-gray-200 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500">
+        <section id="articles" class="py-12 px-4 bg-gray-200 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500">
           <h2 class="text-4xl font-bold text-center mb-12 drop-shadow">Artículos</h2>
           
           <div class="max-w-3xl mx-auto space-y-4">
@@ -120,8 +126,8 @@
         </section>
 
     <!-- Habilidades -->
-    <section class="py-12 px-4 bg-gray-200 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500">
-        <h2 class="text-4xl font-bold text-center mb-12 drop-shadow">Habilidades</h2>
+    <section id="skills" class="py-12 px-4 bg-gray-200 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500">
+        <h2 class="text-4xl font-bold text-center mb-12 drop-shadow">Tecnologias</h2>
       
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           <!-- HABILIDAD -->    
@@ -165,6 +171,14 @@
           <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
             <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/vscode/vscode-original.svg" alt="VSCode" class="w-12 h-12 mb-2">
             <span class="text-sm font-medium">VSCode</span>
+          </div>
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/css3/css3-original.svg" alt="CSS" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">CSS</span>
+          </div>
+          <div class="flex flex-col items-center p-4 rounded-xl shadow-md bg-gray-100 dark:bg-gray-800 transition-colors">
+            <img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/html5/html5-original.svg" alt="HTML" class="w-12 h-12 mb-2">
+            <span class="text-sm font-medium">HTML</span>
           </div>
         </div>
       </section>

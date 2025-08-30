@@ -1,28 +1,100 @@
+:root {
+	--scroll-color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+html.dark {
+    --scroll-color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
 @keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .fade-up {
-  opacity: 0;
-  animation: fadeUp 0.8s ease-out forwards;
+	opacity: 0;
+	animation: fadeUp 0.8s ease-out forwards;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 .note {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  max-width: 700px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	max-width: 700px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#hero {
+	position: relative;
+}
+
+.scroll {
+	text-align: center;
+	color: var(--scroll-color);
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 2rem;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+
+	opacity: .5;
+	transition: opacity 0.3s ease;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.scroll .scroll-btn {
+	margin: 10px auto;
+	width: 20px;
+	height: 40px;
+	border: 4px solid var(--scroll-color);
+	border-radius: 30px;
+	display: flex;
+}
+
+.scroll .scroll-btn .scroll-dot {
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: var(--scroll-color);
+	border-radius: 50%;
+	margin: auto;
+	animation: scrolling 1s linear infinite;
+}
+
+@media screen and (min-width: 768px) {
+	.scroll {
+		display: block;
+	}
+}
+
+@keyframes scrolling {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(10px);
+	}
 }
